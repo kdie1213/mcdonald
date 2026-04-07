@@ -52,6 +52,24 @@ function addToCart() {
 
   const msg = toastMessages[Math.min(cartCount - 1, toastMessages.length - 1)];
   showToast(msg);
+
+  // Generate and show DLC modal
+  document.getElementById('dlcCodeText').textContent = generateDlcCode();
+  document.getElementById('dlcOverlay').style.display = 'flex';
+}
+
+/* ── DLC Modal ── */
+function generateDlcCode() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let result = '';
+  for (let i = 0; i < 8; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+
+function closeDlcModal() {
+  document.getElementById('dlcOverlay').style.display = 'none';
 }
 
 /* ── Toast ── */
