@@ -1,5 +1,5 @@
-const TOTAL_STOCK = 67000;
-let stock = localStorage.getItem('kdiePlushieStock');
+const TOTAL_STOCK = 100000;
+let stock = localStorage.getItem('bobaSonStock2');
 if (stock === null) {
   stock = TOTAL_STOCK;
 } else {
@@ -18,7 +18,7 @@ const toastEl     = document.getElementById('toast');
 function renderStock() {
   stockNumEl.textContent = stock.toLocaleString();
   stockFillEl.style.width = (stock / TOTAL_STOCK * 100) + '%';
-  localStorage.setItem('kdiePlushieStock', stock);
+  localStorage.setItem('bobaSonStock2', stock);
 }
 
 /* ── Add to cart ── */
